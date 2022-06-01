@@ -1,18 +1,22 @@
 import React from "react";
 
-const Sort = () => {
+const Sort = ({ sortType, setSortType, sortOrder, setSortOrder }) => {
   const [open, setOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+  // const [activeItem, setActiveItem] = React.useState(0);
 
   const setActive = (i) => {
-    setActiveItem(i);
+    setSortType(i);
     setOpen(false);
   };
 
-  const list = ["популярности", "цене", "алфавиту"];
+  const list = [
+    { name: "rating", sortProperty: "rating" },
+    { name: "price", sortProperty: "price" },
+    { name: "alphabet", sortProperty: "title" },
+  ];
 
   return (
-    <div className="sort">
+    <div className={`sort${open ? " active" : ""}`}>
       <div className="sort__label">
         <svg
           width="10"
@@ -25,19 +29,31 @@ const Sort = () => {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
-        <span onClick={() => setOpen(!open)}>{list[activeItem]}</span>
+        <b>Sort&nbsp;by:</b>
+        <span onClick={() => setOpen(!open)}>{sortType.name}</span>
+        <div onClick={() => setSortOrder(!sortOrder)} className={`sort__order${sortOrder ? " sort__order--asc" : " sort__order--desc"}`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256">
+            <g fill="#000" strokeMiterlimit="10" strokeWidth="1">
+              <path
+                d="M87 22.681H33.355a3 3 0 110-6H87a3 3 0 110 6zM74.016 39.561h-40.66a3 3 0 110-6h40.66a3 3 0 110 6zM61.032 56.439H33.355a3 3 0 110-6h27.677a3 3 0 110 6zM48.048 73.319H33.355a3 3 0 110-6h14.692a3 3 0 01.001 6zM11.629 73.319a3 3 0 01-3-3V19.681a3 3 0 116 0v50.638a3 3 0 01-3 3z"
+                transform="matrix(.72 0 0 .72 128 128) matrix(3.89 0 0 3.89 -175.05 -175.05)"></path>
+              <path
+                d="M3 31.311A2.998 2.998 0 01.879 26.19l8.629-8.629a3 3 0 014.242 0l8.63 8.629a3 3 0 11-4.243 4.243l-6.509-6.508-6.508 6.508a2.987 2.987 0 01-2.12.878z"
+                transform="matrix(.72 0 0 .72 128 128) matrix(3.89 0 0 3.89 -175.05 -175.05)"></path>
+            </g>
+          </svg>
+        </div>
       </div>
       {open && (
         <div className="sort__popup">
           <ul>
-            {list.map((item, i) => {
+            {list.map((obj, i) => {
               return (
                 <li
-                  key={item}
-                  onClick={() => setActive(i)}
-                  className={activeItem === i ? "active" : ""}>
-                  {item}
+                  key={obj.name}
+                  onClick={() => setActive(obj)}
+                  className={sortType.name === obj.name ? "active" : ""}>
+                  {obj.name}
                 </li>
               );
             })}

@@ -2,6 +2,7 @@
 
 .categories {
   margin-bottom: 1em;
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +29,26 @@
       &.active {
         background-color: #282828;
         color: #fff;
+      }
+    }
+
+  }
+  
+  @media (max-width: 1100px) {
+    margin-bottom: 0.5em;
+    justify-content: center;
+    width: 100%;
+
+    ul {
+      flex-wrap: nowrap;
+      overflow: hidden;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 0.25em;
+
+      li{
+        font-size: 14px;
+        padding: 6px 15px;
       }
     }
   }

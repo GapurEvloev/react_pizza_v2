@@ -2,6 +2,8 @@
 
 .sort {
   position: relative;
+  margin-bottom: 1.5em;
+  
   &__label {
     display: flex;
     align-items: center;
@@ -21,9 +23,32 @@
     }
   }
 
+  &__order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+
+    svg path {
+      transition: fill .2s linear;
+    }
+
+    &--asc {
+      transform: rotate(-180deg);
+    }
+
+    &:hover {
+      svg path{
+        fill: #fe5f1e;
+      }
+    }
+  }
+
   &__popup {
     position: absolute;
-    left: 130px;
+    left: 65px;
     margin-top: 15px;
     background: #ffffff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
@@ -48,6 +73,15 @@
           color: $orange;
         }
       }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    margin-bottom: 0em;
+  }
+  @media (max-width: 768px) {
+    &__label {
+      font-size: 14px;
     }
   }
 }

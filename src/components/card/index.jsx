@@ -1,7 +1,7 @@
 import React from "react";
 
 const PizzaBlock = ({ imageUrl, title, types, sizes, price }) => {
-  const typeNames = ["тонкое", "традиционное"];
+  const typeNames = ["thin", "traditional"];
 
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
@@ -29,15 +29,15 @@ const PizzaBlock = ({ imageUrl, title, types, sizes, price }) => {
               <li
                 key={size}
                 onClick={() => setActiveSize(size)}
-                className={activeSize === i ? "active" : ""}>
-                {size} см.
+                className={activeSize === size ? "active" : ""}>
+                {size} sm.
               </li>
             );
           })}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} $</div>
+        <div className="pizza-block__price">{price} $</div>
         <button className="button button--outline button--add">
           <svg
             width="12"
@@ -50,7 +50,7 @@ const PizzaBlock = ({ imageUrl, title, types, sizes, price }) => {
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
+          <span>Add</span>
           <i>{0}</i>
         </button>
       </div>

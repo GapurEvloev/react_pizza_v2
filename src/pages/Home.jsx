@@ -1,8 +1,8 @@
 import React from "react";
-import Categories from "../components/categories";
-import Sort from "../components/sort";
-import PizzaBlock from "../components/card";
-import Loader from "../components/card/skeleton";
+import Categories from "../components/Categories";
+import Sort from "../components/Sort";
+import PizzaBlock from "../components/Card";
+import Loader from "../components/Card/skeleton";
 
 const Home = () => {
   const [items, setItems] = React.useState([]);

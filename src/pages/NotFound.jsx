@@ -1,5 +1,5 @@
 import React from "react";
-import { NotFoundBLock } from "../components/notFoundBLock";
+import { NotFoundBLock } from "../components/NotFoundBLock";
 
 const NotFound = () => {
   return <NotFoundBLock />;

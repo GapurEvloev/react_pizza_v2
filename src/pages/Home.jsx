@@ -3,8 +3,11 @@ import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import PizzaBlock from "../components/Card";
 import Loader from "../components/Card/skeleton";
+import Pagination from "../components/Pagination";
+import { SearchContext } from "../App";
 
-const Home = ({ searchValue }) => {
+const Home = () => {
+  const { searchValue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -12,15 +15,17 @@ const Home = ({ searchValue }) => {
   const [sortType, setSortType] = React.useState({ name: "rating", sortProperty: "rating" });
   const [sortOrder, setSortOrder] = React.useState(true);
 
+  const [currentPage, setCurrentPage] = React.useState(1);
+
   React.useEffect(() => {
     setIsLoading(true);
 
     const order = sortOrder ? `asc` : "desc";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
-    const search = searchValue ? `&search=${searchValue}` : '';
+    const search = searchValue ? `&search=${searchValue}` : "";
 
     fetch(
-      `https://6293ec25089f87a57ac77f49.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=${order}${search}`,
+      `https://6293ec25089f87a57ac77f49.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortType.sortProperty}&order=${order}${search}`,
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -28,9 +33,9 @@ const Home = ({ searchValue }) => {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, sortOrder, searchValue]);
+  }, [categoryId, sortType, sortOrder, searchValue, currentPage]);
 
-  const loader = [...new Array(6)].map((_, index) => {
+  const loader = [...new Array(4)].map((_, index) => {
     return <Loader key={index} />;
   });
   const pizzas = items
@@ -58,6 +63,7 @@ const Home = ({ searchValue }) => {
       </div>
       <h2 className="content__title">All pizzas</h2>
       <div className="content__items">{isLoading ? loader : pizzas}</div>
+      <Pagination setCurrentPage={(number) => setCurrentPage(number)} />
     </>
   );
 };

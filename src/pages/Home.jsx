@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import filterSlice from "../redux/slices/filterSlice";
+import { setCategoryId } from "../redux/slices/filterSlice";
 
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
@@ -10,14 +10,17 @@ import Pagination from "../components/Pagination";
 import { SearchContext } from "../App";
 
 const Home = () => {
-  const categoryId = useSelector(state => state.filter.categoryId);
+  const categoryId = useSelector((state) => state.filter.categoryId);
   const dispatch = useDispatch();
+
+  const handleCategoryClick = (id) => {
+    dispatch(setCategoryId(id));
+  };
 
   const { searchValue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
-  // const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({ name: "rating", sortProperty: "rating" });
   const [sortOrder, setSortOrder] = React.useState(true);
 
@@ -59,7 +62,7 @@ const Home = () => {
   return (
     <>
       <div className="content__top">
-        <Categories categoryId={categoryId} setCategoryId={(id) => setCategoryId(id)} />
+        <Categories categoryId={categoryId} setCategoryId={handleCategoryClick} />
         <Sort
           sortType={sortType}
           setSortType={setSortType}

@@ -1,19 +1,27 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSort } from "../../redux/slices/filterSlice";
 
-const Sort = ({ sortType, setSortType, sortOrder, setSortOrder }) => {
+const list = [
+  { name: "rating", sortProperty: "rating", sortOrder: true  },
+  { name: "price", sortProperty: "price", sortOrder: true  },
+  { name: "alphabet", sortProperty: "title", sortOrder: true  },
+];
+
+const Sort = () => {
   const [open, setOpen] = React.useState(false);
-  // const [activeItem, setActiveItem] = React.useState(0);
+  
+  const dispatch = useDispatch();
+  const sort = useSelector(state => state.filter.sort )
 
-  const setActive = (i) => {
-    setSortType(i);
+  const setActive = (obj) => {
+    dispatch(setSort(obj));
     setOpen(false);
   };
-
-  const list = [
-    { name: "rating", sortProperty: "rating" },
-    { name: "price", sortProperty: "price" },
-    { name: "alphabet", sortProperty: "title" },
-  ];
+  
+  const setSortOrder = (order) => {
+    dispatch(setSort({...sort, sortOrder: order}));
+  };
 
   return (
     <div className={`sort${open ? " active" : ""}`}>
@@ -30,8 +38,8 @@ const Sort = ({ sortType, setSortType, sortOrder, setSortOrder }) => {
           />
         </svg>
         <b>Sort&nbsp;by:</b>
-        <span onClick={() => setOpen(!open)}>{sortType.name}</span>
-        <div onClick={() => setSortOrder(!sortOrder)} className={`sort__order${sortOrder ? " sort__order--asc" : " sort__order--desc"}`}>
+        <span onClick={() => setOpen(!open)}>{sort.name}</span>
+        <div onClick={() => setSortOrder(!sort.sortOrder)} className={`sort__order${sort.sortOrder ? " sort__order--asc" : " sort__order--desc"}`}>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256">
             <g fill="#000" strokeMiterlimit="10" strokeWidth="1">
               <path
@@ -52,14 +60,11 @@ const Sort = ({ sortType, setSortType, sortOrder, setSortOrder }) => {
                 <li
                   key={obj.name}
                   onClick={() => setActive(obj)}
-                  className={sortType.name === obj.name ? "active" : ""}>
+                  className={sort.name === obj.name ? "active" : ""}>
                   {obj.name}
                 </li>
               );
             })}
-            {/* <li className="active">популярности</li>
-            <li>цене</li>
-            <li>алфавиту</li> */}
           </ul>
         </div>
       )}

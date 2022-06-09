@@ -1,7 +1,7 @@
 import React from "react";
 import debounce from "lodash.debounce";
 
-  import { SearchContext } from "../../App";
+import { SearchContext } from "../../App";
 
 import styles from "./Search.module.sass";
 

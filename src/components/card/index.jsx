@@ -6,9 +6,12 @@ const typeNames = ["thin", "traditional"];
 
 const PizzaBlock = ({ id,  imageUrl, title, types, sizes, price }) => {
   const dispatch = useDispatch();
+  const cartItem = useSelector((state) => state.cart.items.find(obj => obj.id === id));
 
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
+
+  const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
     const item = {
@@ -17,7 +20,7 @@ const PizzaBlock = ({ id,  imageUrl, title, types, sizes, price }) => {
       price,
       imageUrl,
       type: typeNames[activeType],
-      size: activeSize 
+      size: sizes[activeSize] 
     };
     dispatch(addItem(item));  
   };
@@ -32,7 +35,7 @@ const PizzaBlock = ({ id,  imageUrl, title, types, sizes, price }) => {
             return (
               <li
                 key={type}
-                onClick={() => setActiveType(type)}
+                onClick={() => setActiveType(i)}
                 className={activeType === i ? "active" : ""}>
                 {typeNames[type]}
               </li>
@@ -44,8 +47,8 @@ const PizzaBlock = ({ id,  imageUrl, title, types, sizes, price }) => {
             return (
               <li
                 key={size}
-                onClick={() => setActiveSize(size)}
-                className={activeSize === size ? "active" : ""}>
+                onClick={() => setActiveSize(i)}
+                className={activeSize === i ? "active" : ""}>
                 {size} sm.
               </li>
             );
@@ -67,7 +70,7 @@ const PizzaBlock = ({ id,  imageUrl, title, types, sizes, price }) => {
             />
           </svg>
           <span>Add</span>
-          <i>{0}</i>
+          {addedCount > 0 &&  <i>{addedCount}</i>}
         </button>
       </div>
     </div>

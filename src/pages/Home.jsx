@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,12 +11,15 @@ import PizzaBlock from "../components/Card";
 import Loader from "../components/Card/skeleton";
 import Pagination from "../components/Pagination";
 import { SearchContext } from "../App";
+import { fetchPizzas } from "../redux/slices/pizzasSlice";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
+
+  const {items, status} = useSelector((state) => state.pizzas);
 
   const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
@@ -27,32 +30,25 @@ const Home = () => {
   };
 
   const { searchValue } = React.useContext(SearchContext);
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  // const [currentPage, setCurrentPage] = React.useState(1);
 
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number));
   };
 
-  const fetchPizzas = async () => {
-    setIsLoading(true);
+  const getPizzas = async () => {
+
 
     const order = sortOrder;
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
- 
-    try {
-      const res = await axios.get(
-        `https://6293ec25089f87a57ac77f49.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortType}&order=${order}${search}`,
-      );
-      setItems(res.data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
+
+    dispatch(fetchPizzas({
+      order,
+      category,
+      search,
+      currentPage,
+      sortType
+    }));
   };
 
   // Если изменили параметры и был первый рендер
@@ -64,7 +60,7 @@ const Home = () => {
         currentPage,
         sortOrder,
       });
-      navigate(`?${queryString}`);
+      navigate(`/?${queryString}`);
     }
 
     isMounted.current = true;
@@ -91,7 +87,7 @@ const Home = () => {
     window.scrollTo(0, 0);
 
     if (!isSearch.current) {
-      fetchPizzas();
+      getPizzas();
     }
 
     isSearch.current = false;
@@ -119,7 +115,7 @@ const Home = () => {
         <Sort />
       </div>
       <h2 className="content__title">All pizzas</h2>
-      <div className="content__items">{isLoading ? loader : pizzas}</div>
+      <div className="content__items">{status === 'loading' ? loader : pizzas}</div>
       <Pagination currentPage={currentPage} setCurrentPage={onChangePage} />
     </>
   );

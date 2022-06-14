@@ -110,13 +110,26 @@ const Home = () => {
 
   return (
     <>
-      <div className="content__top">
-        <Categories categoryId={categoryId} setCategoryId={handleCategoryClick} />
-        <Sort />
-      </div>
-      <h2 className="content__title">All pizzas</h2>
-      <div className="content__items">{status === 'loading' ? loader : pizzas}</div>
-      <Pagination currentPage={currentPage} setCurrentPage={onChangePage} />
+      {
+        status === 'error' ? (
+          <div className="content__error-info">
+            <h2>Unexpected error 😕</h2>
+            <a href="/" className="button button--black">
+              <span>Back</span>
+            </a>
+          </div>
+        ) : (
+          <>
+            <div className="content__top">
+              <Categories categoryId={categoryId} setCategoryId={handleCategoryClick} />
+              <Sort />
+            </div>
+            <h2 className="content__title">All pizzas</h2>
+            <div className="content__items">{status === 'loading' ? loader : pizzas}</div>
+            <Pagination currentPage={currentPage} setCurrentPage={onChangePage} />
+          </>
+        )
+      }
     </>
   );
 };

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#5 fin - sort popup">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#6 fin - get pizzas from BE">
+      <change afterPath="$PROJECT_DIR$/src/Pages/Cart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/NotFound.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LoadingBlock/LoadingBlock.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LoadingBlock/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundBLock/NotFoundBLock.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundBLock/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundBLock/styles.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sort.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662768891266</updated>
-      <workItem from="1662768892421" duration="19441000" />
+      <workItem from="1662768892421" duration="21951000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -89,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662817330418</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="#6 fin - get pizzas from BE">
+      <created>1662844693973</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662844693973</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +127,8 @@
     <MESSAGE value="#3 fin - useState counter" />
     <MESSAGE value="#4 fin - render pizzas" />
     <MESSAGE value="#5 fin - sort popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="#5 fin - sort popup" />
+    <MESSAGE value="#6 fin - get pizzas from BE" />
+    <option name="LAST_COMMIT_MESSAGE" value="#6 fin - get pizzas from BE" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

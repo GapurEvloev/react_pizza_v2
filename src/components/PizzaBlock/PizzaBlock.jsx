@@ -1,14 +1,14 @@
 import React from "react";
 
 const PizzaBlock = ({ id, imageUrl, title }) => {
-  // "id": 0,
-  //   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-  //   "title": "Пепперони Фреш с перцем",
-  //   "types": [0, 1],
-  //   "sizes": [26, 30, 40],
-  //   "price": 803,
-  //   "category": 0,
-  //   "rating": 4
+  const [pizzaCount, setPizzaCount] = React.useState(0);
+
+  const handlePizzaCountChange = () => {
+    setPizzaCount(pizzaCount + 1);
+  };
+
+  console.log("render");
+
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
@@ -26,7 +26,10 @@ const PizzaBlock = ({ id, imageUrl, title }) => {
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от 395 ₽</div>
-        <div className="button button--outline button--add">
+        <button
+          onClick={handlePizzaCountChange}
+          className="button button--outline button--add"
+        >
           <svg
             width="12"
             height="12"
@@ -40,8 +43,8 @@ const PizzaBlock = ({ id, imageUrl, title }) => {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
-        </div>
+          <i>{pizzaCount}</i>
+        </button>
       </div>
     </div>
   );

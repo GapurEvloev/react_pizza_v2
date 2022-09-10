@@ -28,8 +28,6 @@ const PizzaBlock = ({ imageUrl, title, sizes, types }) => {
               </li>
             );
           })}
-          {/*<li className="active">тонкое</li>*/}
-          {/*<li>традиционное</li>*/}
         </ul>
         <ul>
           {sizes.map((size, i) => {

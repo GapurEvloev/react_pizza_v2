@@ -1,9 +1,10 @@
 import React from "react";
+import axios from "axios";
+
 import Categories from "../components/Categories";
 import SortPopup from "../components/SortPopup";
 import LoadingBlock from "../components/LoadingBlock";
 import PizzaBlock from "../components/PizzaBlock";
-import axios from "axios";
 
 const Home = () => {
   const [items, setItems] = React.useState([]);

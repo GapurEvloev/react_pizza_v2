@@ -1,9 +1,45 @@
 import React from "react";
+import classNames from "classnames";
 
 const SortPopup = () => {
+  const sortItems = [
+    { name: "популярности", type: "popular", order: "desc" },
+    { name: "цене", type: "price", order: "desc" },
+    { name: "алфавит", type: "name", order: "asc" },
+  ];
+  const [visiblePopup, setVisiblePopup] = React.useState(false);
+  const [activeSortType, setActiveSortType] = React.useState(sortItems[0]);
+  const sortRef = React.useRef();
+
+  const toggleVisiblePopup = () => {
+    setVisiblePopup(!visiblePopup);
+  };
+
+  const handleOutsideClick = (event) => {
+    const path = event.path || (event.composedPath && event.composedPath());
+    if (!path.includes(sortRef.current)) {
+      setVisiblePopup(false);
+    }
+  };
+
+  const onSelectItem = (index) => {
+    setActiveSortType(index);
+    setVisiblePopup(false);
+  };
+
+  React.useEffect(() => {
+    document.body.addEventListener("click", handleOutsideClick);
+  }, []);
+
   return (
-    <div className="sort">
-      <div className="sort__label">
+    <div ref={sortRef} className="sort">
+      <div
+        onClick={toggleVisiblePopup}
+        className={classNames(
+          "sort__label",
+          visiblePopup && "sort__label--active"
+        )}
+      >
         <svg
           width="10"
           height="6"
@@ -17,15 +53,31 @@ const SortPopup = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span>популярности</span>
+        <span>{activeSortType.name}</span>
       </div>
-      <div className="sort__popup">
-        <ul>
-          <li className="active">популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
-        </ul>
-      </div>
+      {visiblePopup && (
+        <div className="sort__popup">
+          <ul>
+            {sortItems &&
+              sortItems.map((objItem) => {
+                return (
+                  <li
+                    key={objItem.type}
+                    onClick={() => onSelectItem(objItem)}
+                    className={classNames(
+                      activeSortType.type === objItem.type && "active"
+                    )}
+                  >
+                    {objItem.name}
+                  </li>
+                );
+              })}
+            {/*<li className="active">популярности</li>*/}
+            {/*<li>цене</li>*/}
+            {/*<li>алфавиту</li>*/}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

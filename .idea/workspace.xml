@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#4 fin - render pizzas">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#5 fin - sort popup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sort.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662768891266</updated>
-      <workItem from="1662768892421" duration="15935000" />
+      <workItem from="1662768892421" duration="19441000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -81,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662813215707</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#5 fin - sort popup">
+      <created>1662817330418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662817330418</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,7 +110,8 @@
     <MESSAGE value="#2 fin - make components" />
     <MESSAGE value="#3 fin - useState counter" />
     <MESSAGE value="#4 fin - render pizzas" />
-    <option name="LAST_COMMIT_MESSAGE" value="#4 fin - render pizzas" />
+    <MESSAGE value="#5 fin - sort popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="#5 fin - sort popup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

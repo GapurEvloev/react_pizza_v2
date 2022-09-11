@@ -2,6 +2,7 @@
 
 .sort {
   position: relative;
+  margin-bottom: 1.5em;
 
   &__label {
     display: flex;
@@ -9,11 +10,7 @@
 
     svg {
       margin-right: 8px;
-      -webkit-transition: all 0.1s linear;
-      -moz-transition: all 0.1s linear;
-      -ms-transition: all 0.1s linear;
-      -o-transition: all 0.1s linear;
-      transition: all 0.1s linear;
+      transition: transform 0.1s linear;
     }
 
     b {
@@ -28,18 +25,37 @@
 
     &--active {
       svg {
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
         transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+
+    svg path {
+      transition: fill .2s linear;
+    }
+
+    &--asc {
+      transform: rotate(-180deg);
+    }
+
+    &:hover {
+      svg path{
+        fill: #fe5f1e;
       }
     }
   }
 
   &__popup {
     position: absolute;
-    right: 0;
+    left: 65px;
     margin-top: 15px;
     background: #ffffff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
@@ -64,6 +80,15 @@
           color: $orange;
         }
       }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    margin-bottom: 0;
+  }
+  @media (max-width: 768px) {
+    &__label {
+      font-size: 14px;
     }
   }
 }

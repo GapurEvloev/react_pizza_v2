@@ -3,9 +3,9 @@ import classNames from "classnames";
 
 const SortPopup = () => {
   const sortItems = [
-    { name: "популярности", type: "popular", order: "desc" },
-    { name: "цене", type: "price", order: "desc" },
-    { name: "алфавит", type: "name", order: "asc" },
+    { name: "rating", type: "popular", order: "desc" },
+    { name: "price", type: "price", order: "desc" },
+    { name: "alphabet", type: "name", order: "asc" },
   ];
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const [activeSortType, setActiveSortType] = React.useState(sortItems[0]);
@@ -52,7 +52,7 @@ const SortPopup = () => {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>Sort&nbsp;by:</b>
         <span>{activeSortType.name}</span>
       </div>
       {visiblePopup && (

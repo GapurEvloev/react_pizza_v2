@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#7 fin">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#7 fin - fix &amp; prettier last commit">
+      <change afterPath="$PROJECT_DIR$/src/components/CartEmpty/CartEmpty.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CartEmpty/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sort.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662768891266</updated>
-      <workItem from="1662768892421" duration="22202000" />
+      <workItem from="1662768892421" duration="28700000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -103,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662847167448</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="#7 fin - fix &amp; prettier last commit">
+      <created>1662847452339</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662847452339</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +143,8 @@
     <MESSAGE value="#5 fin - sort popup" />
     <MESSAGE value="#6 fin - get pizzas from BE" />
     <MESSAGE value="#7 fin" />
-    <option name="LAST_COMMIT_MESSAGE" value="#7 fin" />
+    <MESSAGE value="#7 fin - fix &amp; prettier last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="#7 fin - fix &amp; prettier last commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

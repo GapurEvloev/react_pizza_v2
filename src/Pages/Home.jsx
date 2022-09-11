@@ -20,6 +20,7 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
       });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <>
@@ -27,7 +28,7 @@ const Home = () => {
         <Categories />
         <SortPopup />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">All pizzas</h2>
       <div className="content__items">
         {isLoading
           ? [...new Array(6)].map((_, i) => <LoadingBlock key={i} />)

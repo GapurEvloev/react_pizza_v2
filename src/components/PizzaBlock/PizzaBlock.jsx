@@ -1,11 +1,11 @@
 import React from "react";
 
-const PizzaBlock = ({ imageUrl, title, sizes, types }) => {
+const PizzaBlock = ({ imageUrl, title, sizes, types, price }) => {
   const [pizzaCount, setPizzaCount] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
   const [activeType, setActiveType] = React.useState(0);
 
-  const typeNames = ["тонкое", "традиционное"];
+  const typeNames = ["thin", "traditional"];
 
   const handlePizzaCountChange = () => {
     setPizzaCount(pizzaCount + 1);
@@ -37,14 +37,14 @@ const PizzaBlock = ({ imageUrl, title, sizes, types }) => {
                 onClick={() => setActiveSize(i)}
                 className={activeSize === i ? "active" : ""}
               >
-                {size} см.
+                {size} sm.
               </li>
             );
           })}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от 395 ₽</div>
+        <div className="pizza-block__price">{price} $</div>
         <button
           onClick={handlePizzaCountChange}
           className="button button--outline button--add"
@@ -61,8 +61,10 @@ const PizzaBlock = ({ imageUrl, title, sizes, types }) => {
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
-          <i>{pizzaCount}</i>
+          &nbsp;
+          <span>Add</span>
+          &nbsp;
+          {pizzaCount !== 0 && <i>{pizzaCount}</i>}
         </button>
       </div>
     </div>

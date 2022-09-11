@@ -16,7 +16,11 @@ body {
   border-radius: 10px;
   max-width: 1400px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
+    width: calc(100vw - 40px);
+  }
+
+  @media (max-width: 374px) {
     width: 100vw;
   }
 }
@@ -267,7 +271,6 @@ body {
 
         span {
           color: darken($color: $gray-line, $amount: 20);
-          font-weight: 500;
           font-weight: 600;
         }
 

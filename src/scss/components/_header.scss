@@ -8,6 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   &__logo {
@@ -20,13 +25,16 @@
     h1 {
       color: #181818;
       font-size: 24px;
-      letter-spacing: 1%;
       text-transform: uppercase;
       font-weight: 800;
     }
 
     p {
       color: #7b7b7b;
+    }
+
+    @media (max-width: 900px) {
+      margin-bottom: 2em;
     }
   }
 }

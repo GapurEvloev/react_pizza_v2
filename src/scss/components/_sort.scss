@@ -3,13 +3,14 @@
 .sort {
   position: relative;
   margin-bottom: 1.5em;
-  
+
   &__label {
     display: flex;
     align-items: center;
 
     svg {
       margin-right: 8px;
+      transition: transform 0.1s linear;
     }
 
     b {
@@ -20,6 +21,12 @@
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+    }
+
+    &--active {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -51,7 +58,7 @@
     left: 65px;
     margin-top: 15px;
     background: #ffffff;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
     border-radius: 10px;
     overflow: hidden;
     padding: 10px 0;
@@ -77,7 +84,7 @@
   }
 
   @media (max-width: 1100px) {
-    margin-bottom: 0em;
+    margin-bottom: 0;
   }
   @media (max-width: 768px) {
     &__label {

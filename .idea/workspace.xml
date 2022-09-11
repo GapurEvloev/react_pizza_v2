@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#8 fin">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="fixes after merge restart branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Cart.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/NotFound.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/db/pizzas.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartEmpty/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartItem/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/style.module.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.module.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/skeleton.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/notFoundBLock/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/notFoundBLock/styles.module.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sort/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzasSlice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sort.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662847452339</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixes after merge restart branch">
+      <created>1662902001111</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662902001111</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +143,8 @@
     <MESSAGE value="#6 fin - get pizzas from BE" />
     <MESSAGE value="#7 fin" />
     <MESSAGE value="#7 fin - fix &amp; prettier last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="#7 fin - fix &amp; prettier last commit" />
+    <MESSAGE value="fixes after merge restart branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes after merge restart branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

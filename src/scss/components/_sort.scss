@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
 
-    svg {
+    &-triangle {
       margin-right: 8px;
       transition: transform 0.1s linear;
     }
@@ -23,10 +23,8 @@
       cursor: pointer;
     }
 
-    &--active {
-      svg {
+    &--active &-triangle{
         transform: rotate(180deg);
-      }
     }
   }
 

@@ -7,12 +7,25 @@ import LoadingBlock from "../components/LoadingBlock";
 import PizzaBlock from "../components/PizzaBlock";
 
 const Home = () => {
+  const [activeCategoryId, setActiveCategoryId] = React.useState(null);
+  const [activeSort, setActiveSort] = React.useState({
+    name: "rating",
+    type: "rating",
+    order: true,
+  });
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
+  console.log(activeSort);
+
   React.useEffect(() => {
+    setIsLoading(true);
     axios
-      .get("https://6293ec25089f87a57ac77f49.mockapi.io/items")
+      .get(
+        `https://6293ec25089f87a57ac77f49.mockapi.io/items/?${
+          activeCategoryId > 0 ? `&category=${activeCategoryId}` : ""
+        }&sortBy=${activeSort.type}&order=${activeSort.order ? "asc" : "desc"}`
+      )
       .then((res) => {
         setItems(res.data);
         setIsLoading(false);
@@ -21,12 +34,15 @@ const Home = () => {
         console.log(error);
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [activeCategoryId, activeSort]);
   return (
     <>
       <div className="content__top">
-        <Categories />
-        <SortPopup />
+        <Categories
+          activeCategory={activeCategoryId}
+          setActiveCategory={setActiveCategoryId}
+        />
+        <SortPopup activeSort={activeSort} setActiveSort={setActiveSort} />
       </div>
       <h2 className="content__title">All pizzas</h2>
       <div className="content__items">

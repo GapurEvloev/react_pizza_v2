@@ -1,7 +1,6 @@
 import React from "react";
 
-const Categories = () => {
-  const [activeCategory, setActiveCategory] = React.useState(null);
+const Categories = ({ activeCategory, setActiveCategory }) => {
   const categoryNames = ["Meat", "Vegetarian", "Grill", "Spicy", "Closed"];
 
   const handleActiveCategory = (index) => {

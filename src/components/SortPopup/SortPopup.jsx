@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from "classnames";
 
-const SortPopup = ({ activeSort, setActiveSort }) => {
+const SortPopup = ({ activeSort, setActiveSort, isLoading }) => {
   const sortItems = [
     { name: "rating", type: "rating", order: true },
-    { name: "price", type: "price", order: false },
+    { name: "price", type: "price", order: true },
     { name: "alphabet", type: "title", order: true },
   ];
   const [visiblePopup, setVisiblePopup] = React.useState(false);
@@ -23,7 +23,7 @@ const SortPopup = ({ activeSort, setActiveSort }) => {
   };
 
   const onSelectItem = (obj) => {
-    setActiveSort(obj);
+    setActiveSort({ ...activeSort, name: obj.name, type: obj.type });
     setVisiblePopup(false);
   };
 
@@ -36,7 +36,7 @@ const SortPopup = ({ activeSort, setActiveSort }) => {
   }, []);
 
   return (
-    <div ref={sortRef} className="sort">
+    <div ref={sortRef} className={classNames("sort", isLoading && "disabled")}>
       <div
         className={classNames(
           "sort__label",

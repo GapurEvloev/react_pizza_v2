@@ -1,6 +1,7 @@
 import React from "react";
+import classNames from "classnames";
 
-const Categories = ({ activeCategory, setActiveCategory }) => {
+const Categories = ({ activeCategory, setActiveCategory, isLoading }) => {
   const categoryNames = ["Meat", "Vegetarian", "Grill", "Spicy", "Closed"];
 
   const handleActiveCategory = (index) => {
@@ -8,7 +9,7 @@ const Categories = ({ activeCategory, setActiveCategory }) => {
   };
 
   return (
-    <div className="categories">
+    <div className={classNames("categories", isLoading && "disabled")}>
       <ul>
         <li
           className={activeCategory === null ? "active" : ""}

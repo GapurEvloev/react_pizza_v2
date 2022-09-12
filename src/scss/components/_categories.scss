@@ -3,6 +3,11 @@
 .categories {
   margin-bottom: 1em;
 
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;

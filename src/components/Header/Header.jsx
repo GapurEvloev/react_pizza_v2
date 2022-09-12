@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/img/pizza-logo.svg";
+import Search from "../Search";
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
             <p>the most delicious pizza</p>
           </div>
         </Link>
+        <Search />
         <div className="header__cart">
           <Link to="/cart" className="button button--cart">
             <span>520 $</span>

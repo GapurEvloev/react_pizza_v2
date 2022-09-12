@@ -4,6 +4,11 @@
   position: relative;
   margin-bottom: 1.5em;
 
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &__label {
     display: flex;
     align-items: center;

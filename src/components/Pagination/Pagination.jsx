@@ -2,7 +2,7 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 import classNames from "classnames";
 
-import styles from "./style.module.sass";
+import styles from "./style.module.scss";
 
 const Pagination = ({ currentPage, setCurrentPage, isLoading }) => {
   return (

@@ -5,21 +5,33 @@ import Categories from "../components/Categories";
 import SortPopup from "../components/SortPopup";
 import LoadingBlock from "../components/LoadingBlock";
 import PizzaBlock from "../components/PizzaBlock";
-import { SearchContext } from "../App";
 import Pagination from "../components/Pagination";
+import { SearchContext } from "../App";
+
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setActiveCategoryId,
+  setCurrentPage,
+} from "../redux/slices/filtreSlice";
 
 const Home = () => {
-  const [activeCategoryId, setActiveCategoryId] = React.useState(null);
-  const [activeSort, setActiveSort] = React.useState({
-    name: "rating",
-    type: "rating",
-    order: true,
-  });
-  const [currentPage, onChangePage] = React.useState(1);
+  const dispatch = useDispatch();
+  const { activeCategoryId, activeSort, currentPage } = useSelector(
+    (state) => state.filter
+  );
+
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const { searchValue } = React.useContext(SearchContext);
+
+  const handleActiveCategoryId = (id) => {
+    dispatch(setActiveCategoryId(id));
+  };
+
+  const handleCurrentPage = (id) => {
+    dispatch(setCurrentPage(id));
+  };
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -59,20 +71,16 @@ const Home = () => {
         <Categories
           isLoading={isLoading}
           activeCategory={activeCategoryId}
-          setActiveCategory={setActiveCategoryId}
+          setActiveCategory={handleActiveCategoryId}
         />
-        <SortPopup
-          isLoading={isLoading}
-          activeSort={activeSort}
-          setActiveSort={setActiveSort}
-        />
+        <SortPopup isLoading={isLoading} />
       </div>
       <h2 className="content__title">All pizzas</h2>
       <div className="content__items">{isLoading ? skeleton : pizzas}</div>
       <Pagination
         isLoading={isLoading}
         currentPage={currentPage}
-        setCurrentPage={onChangePage}
+        setCurrentPage={handleCurrentPage}
       />
     </>
   );

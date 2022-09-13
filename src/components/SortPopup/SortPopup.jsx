@@ -1,12 +1,18 @@
 import React from "react";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveSort } from "../../redux/slices/filtreSlice";
 
-const SortPopup = ({ activeSort, setActiveSort, isLoading }) => {
-  const sortItems = [
-    { name: "rating", type: "rating", order: true },
-    { name: "price", type: "price", order: true },
-    { name: "alphabet", type: "title", order: true },
-  ];
+const sortItems = [
+  { name: "rating", type: "rating", order: true },
+  { name: "price", type: "price", order: true },
+  { name: "alphabet", type: "title", order: true },
+];
+
+const SortPopup = ({ isLoading }) => {
+  const dispatch = useDispatch();
+  const activeSort = useSelector((state) => state.filter.activeSort);
+
   const [visiblePopup, setVisiblePopup] = React.useState(false);
 
   const sortRef = React.useRef();
@@ -23,12 +29,12 @@ const SortPopup = ({ activeSort, setActiveSort, isLoading }) => {
   };
 
   const onSelectItem = (obj) => {
-    setActiveSort({ ...activeSort, name: obj.name, type: obj.type });
+    dispatch(setActiveSort({ ...activeSort, name: obj.name, type: obj.type }));
     setVisiblePopup(false);
   };
 
   const setSortOrder = (order) => {
-    setActiveSort({ ...activeSort, order });
+    dispatch(setActiveSort({ ...activeSort, order }));
   };
 
   React.useEffect(() => {

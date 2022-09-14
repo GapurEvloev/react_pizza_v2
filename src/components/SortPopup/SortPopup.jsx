@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSort } from "../../redux/slices/filtreSlice";
 
-const sortItems = [
+export const sortItems = [
   { name: "rating", type: "rating", order: true },
   { name: "price", type: "price", order: true },
   { name: "alphabet", type: "title", order: true },

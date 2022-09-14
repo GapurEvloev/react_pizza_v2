@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#14 fin - debounce">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#15 fin - useParams">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtreSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filtreSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <updated>1662768891266</updated>
       <workItem from="1662768892421" duration="28700000" />
       <workItem from="1663084233546" duration="626000" />
-      <workItem from="1663084918844" duration="26289000" />
+      <workItem from="1663084918844" duration="27553000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -167,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663161566768</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="#15 fin - useParams">
+      <created>1663183200853</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663183200853</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +200,8 @@
     <MESSAGE value="fix last" />
     <MESSAGE value="#12 - 13 fin -- include Redux Toolkit for categories, sorting &amp; pagination" />
     <MESSAGE value="#14 fin - debounce" />
-    <option name="LAST_COMMIT_MESSAGE" value="#14 fin - debounce" />
+    <MESSAGE value="#15 fin - useParams" />
+    <option name="LAST_COMMIT_MESSAGE" value="#15 fin - useParams" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

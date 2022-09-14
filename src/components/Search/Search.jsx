@@ -1,8 +1,8 @@
 import React from "react";
-import { debounce } from "lodash";
-import { SearchContext } from "../../App";
+import debounce from "lodash.debounce";
 
 import styles from "./Search.module.sass";
+import { SearchContext } from "../../App";
 
 const Search = () => {
   const [value, setValue] = React.useState("");
@@ -30,9 +30,9 @@ const Search = () => {
   return (
     <div className={styles.root}>
       <input
+        ref={inputRef}
         value={value}
         onChange={onChangeInput}
-        ref={inputRef}
         className={styles.input}
         type="text"
         name="search"

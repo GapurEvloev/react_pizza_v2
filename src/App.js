@@ -8,14 +8,14 @@ import Cart from "./pages/Cart";
 
 import "./scss/app.scss";
 
-export const SearchContext = React.createContext(["", () => {}]);
+export const SearchContext = React.createContext();
 
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
 
   return (
     <div className="App">
-      <SearchContext.Provider value={(searchValue, setSearchValue)}>
+      <SearchContext.Provider value={{ searchValue, setSearchValue }}>
         <div className="wrapper">
           <Header />
           <div className="content">

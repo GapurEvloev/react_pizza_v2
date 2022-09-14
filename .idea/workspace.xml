@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#15 fin - useParams">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#16 fin - add &amp; remove cart items">
+      <change afterPath="$PROJECT_DIR$/src/components/CartItem/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CartItem/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +76,7 @@
       <updated>1662768891266</updated>
       <workItem from="1662768892421" duration="28700000" />
       <workItem from="1663084233546" duration="626000" />
-      <workItem from="1663084918844" duration="27553000" />
+      <workItem from="1663084918844" duration="34644000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -169,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663183200853</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="#16 - remove outside click listener">
+      <created>1663184481642</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1663184481642</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +215,9 @@
     <MESSAGE value="#12 - 13 fin -- include Redux Toolkit for categories, sorting &amp; pagination" />
     <MESSAGE value="#14 fin - debounce" />
     <MESSAGE value="#15 fin - useParams" />
-    <option name="LAST_COMMIT_MESSAGE" value="#15 fin - useParams" />
+    <MESSAGE value="#16 - remove outside click listener" />
+    <MESSAGE value="#16 fin - add &amp; remove cart items" />
+    <option name="LAST_COMMIT_MESSAGE" value="#16 fin - add &amp; remove cart items" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

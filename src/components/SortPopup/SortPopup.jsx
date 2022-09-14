@@ -25,7 +25,6 @@ const SortPopup = ({ isLoading }) => {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(sortRef.current)) {
       setVisiblePopup(false);
-      console.log("click outside");
     }
   };
 

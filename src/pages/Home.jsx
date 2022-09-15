@@ -9,26 +9,23 @@ import LoadingBlock from "../components/LoadingBlock";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 
-import { SearchContext } from "../App";
 import {
+  selectFilter,
   setActiveCategoryId,
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filtreSlice";
 import { sortItems } from "../components/SortPopup/SortPopup";
-import { fetchPizzas } from "../redux/slices/pizzaSlice";
+import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
-  const { activeCategoryId, activeSort, currentPage } = useSelector(
-    (state) => state.filter
-  );
-  const { items, status } = useSelector((state) => state.pizza);
-
-  const { searchValue } = React.useContext(SearchContext);
+  const { activeCategoryId, activeSort, currentPage, searchValue } =
+    useSelector(selectFilter);
+  const { items, status } = useSelector(selectPizzaData);
 
   const handleActiveCategoryId = (id) => {
     dispatch(setActiveCategoryId(id));

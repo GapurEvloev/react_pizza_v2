@@ -1,7 +1,10 @@
 import React from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveSort } from "../../redux/slices/filtreSlice";
+import {
+  selectActiveSort,
+  setActiveSort,
+} from "../../redux/slices/filtreSlice";
 
 export const sortItems = [
   { name: "rating", type: "rating", order: true },
@@ -11,7 +14,7 @@ export const sortItems = [
 
 const SortPopup = ({ isLoading }) => {
   const dispatch = useDispatch();
-  const activeSort = useSelector((state) => state.filter.activeSort);
+  const activeSort = useSelector(selectActiveSort);
 
   const [visiblePopup, setVisiblePopup] = React.useState(false);
 

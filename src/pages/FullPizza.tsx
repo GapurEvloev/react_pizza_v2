@@ -1,9 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
-const FullPizza = () => {
-  const [pizza, setPizza] = React.useState();
+const FullPizza: React.FC = () => {
+  const [pizza, setPizza] = React.useState<{
+    title: string;
+    imageUrl: string;
+    price: number;
+  }>();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -36,6 +40,13 @@ const FullPizza = () => {
       />
       <h1>{pizza?.title}</h1>
       <h2>{pizza?.price} $</h2>
+      <Link
+        to="/"
+        className="button button--black"
+        style={{ marginTop: "40px" }}
+      >
+        <span>Back</span>
+      </Link>
     </div>
   );
 };

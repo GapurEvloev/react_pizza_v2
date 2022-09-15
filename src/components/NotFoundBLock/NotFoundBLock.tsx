@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.sass";
 
-const NotFoundBLock = () => {
+const NotFoundBLock: React.FC = () => {
   return (
     <h1 className={styles.root}>
       <span>😕</span>

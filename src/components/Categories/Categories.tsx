@@ -1,12 +1,18 @@
 import React from "react";
 import classNames from "classnames";
 
-const Categories = ({ activeCategory, setActiveCategory, isLoading }) => {
-  const categoryNames = ["All", "Meat", "Vegan", "Chicken", "Spicy", "Cheese"];
+type CategoriesProps = {
+  activeCategory: number;
+  setActiveCategory: any;
+  isLoading: string;
+};
 
-  const handleActiveCategory = (index) => {
-    setActiveCategory(index);
-  };
+const Categories: React.FC<CategoriesProps> = ({
+  activeCategory,
+  setActiveCategory,
+  isLoading,
+}) => {
+  const categoryNames = ["All", "Meat", "Vegan", "Chicken", "Spicy", "Cheese"];
 
   return (
     <div
@@ -20,7 +26,7 @@ const Categories = ({ activeCategory, setActiveCategory, isLoading }) => {
           return (
             <li
               key={i}
-              onClick={() => handleActiveCategory(i)}
+              onClick={() => setActiveCategory(i)}
               className={activeCategory === i ? "active" : ""}
             >
               {name}

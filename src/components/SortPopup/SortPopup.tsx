@@ -6,37 +6,47 @@ import {
   setActiveSort,
 } from "../../redux/slices/filtreSlice";
 
-export const sortItems = [
+type SortItem = {
+  name: string;
+  type: string;
+  order: boolean;
+};
+
+type PopupClick = MouseEvent & {
+  path: Node[];
+};
+
+export const sortItems: SortItem[] = [
   { name: "rating", type: "rating", order: true },
   { name: "price", type: "price", order: true },
   { name: "alphabet", type: "title", order: true },
 ];
 
-const SortPopup = ({ isLoading }) => {
+const SortPopup = ({ isLoading }: { isLoading: string }) => {
   const dispatch = useDispatch();
   const activeSort = useSelector(selectActiveSort);
 
   const [visiblePopup, setVisiblePopup] = React.useState(false);
 
-  const sortRef = React.useRef();
+  const sortRef = React.useRef<HTMLDivElement>(null);
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
 
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = (event: any) => {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(sortRef.current)) {
       setVisiblePopup(false);
     }
   };
 
-  const onSelectItem = (obj) => {
+  const onSelectItem = (obj: SortItem) => {
     dispatch(setActiveSort({ ...activeSort, name: obj.name, type: obj.type }));
     setVisiblePopup(false);
   };
 
-  const setSortOrder = (order) => {
+  const setSortOrder = (order: boolean) => {
     dispatch(setActiveSort({ ...activeSort, order }));
   };
 

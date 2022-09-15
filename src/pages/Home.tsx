@@ -18,7 +18,7 @@ import {
 import { sortItems } from "../components/SortPopup/SortPopup";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+const Home: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
@@ -27,11 +27,11 @@ const Home = () => {
     useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
 
-  const handleActiveCategoryId = (id) => {
+  const handleActiveCategoryId = (id: number) => {
     dispatch(setActiveCategoryId(id));
   };
 
-  const handleCurrentPage = (id) => {
+  const handleCurrentPage = (id: number) => {
     dispatch(setCurrentPage(id));
   };
 
@@ -43,6 +43,7 @@ const Home = () => {
       search = searchValue ? `&search=${searchValue}` : "";
 
     dispatch(
+      //@ts-ignore
       fetchPizzas({
         currentPage,
         category,
@@ -106,7 +107,7 @@ const Home = () => {
     // .filter((item) =>
     //   item.title.toLowerCase().includes(searchValue.toLowerCase())
     // )
-    .map((pizza) => {
+    .map((pizza: any) => {
       return <PizzaBlock key={pizza.id} {...pizza} />;
     });
   const skeleton = [...new Array(6)].map((_, i) => <LoadingBlock key={i} />);

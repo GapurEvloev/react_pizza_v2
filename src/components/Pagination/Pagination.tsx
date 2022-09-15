@@ -4,7 +4,17 @@ import classNames from "classnames";
 
 import styles from "./style.module.scss";
 
-const Pagination = ({ currentPage, setCurrentPage, isLoading }) => {
+type PaginationProps = {
+  currentPage: number;
+  isLoading: string;
+  setCurrentPage: any;
+};
+
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  setCurrentPage,
+  isLoading,
+}) => {
   return (
     <ReactPaginate
       className={classNames(
@@ -18,7 +28,6 @@ const Pagination = ({ currentPage, setCurrentPage, isLoading }) => {
       pageCount={3}
       forcePage={currentPage - 1}
       previousLabel="<"
-      renderOnZeroPageCount={null}
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import qs from "qs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import Categories from "../components/Categories";
@@ -107,7 +107,11 @@ const Home = () => {
     //   item.title.toLowerCase().includes(searchValue.toLowerCase())
     // )
     .map((pizza) => {
-      return <PizzaBlock key={pizza.id} {...pizza} />;
+      return (
+        <Link key={pizza.id} to={`/pizza/${pizza.id}`}>
+          <PizzaBlock {...pizza} />
+        </Link>
+      );
     });
   const skeleton = [...new Array(6)].map((_, i) => <LoadingBlock key={i} />);
 

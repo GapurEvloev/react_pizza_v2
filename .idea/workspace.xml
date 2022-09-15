@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#17 fin - RTK createAsyncThunk">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#19 fin - useParams, useLocation, Outlet">
+      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/FullPizza.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtreSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filtreSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +74,7 @@
       <updated>1662768891266</updated>
       <workItem from="1662768892421" duration="28700000" />
       <workItem from="1663084233546" duration="626000" />
-      <workItem from="1663084918844" duration="46798000" />
+      <workItem from="1663084918844" duration="52869000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -199,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663240830270</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="#18 fin">
+      <created>1663251143510</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663251143510</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +237,9 @@
     <MESSAGE value="#16 - remove outside click listener" />
     <MESSAGE value="#16 fin - add &amp; remove cart items" />
     <MESSAGE value="#17 fin - RTK createAsyncThunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="#17 fin - RTK createAsyncThunk" />
+    <MESSAGE value="#18 fin" />
+    <MESSAGE value="#19 fin - useParams, useLocation, Outlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="#19 fin - useParams, useLocation, Outlet" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

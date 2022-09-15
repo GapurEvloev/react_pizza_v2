@@ -9,7 +9,12 @@ const Categories = ({ activeCategory, setActiveCategory, isLoading }) => {
   };
 
   return (
-    <div className={classNames("categories", isLoading && "disabled")}>
+    <div
+      className={classNames(
+        "categories",
+        isLoading === "loading" && "disabled"
+      )}
+    >
       <ul>
         <li
           className={activeCategory === null ? "active" : ""}

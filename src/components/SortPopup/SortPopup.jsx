@@ -45,7 +45,10 @@ const SortPopup = ({ isLoading }) => {
   }, []);
 
   return (
-    <div ref={sortRef} className={classNames("sort", isLoading && "disabled")}>
+    <div
+      ref={sortRef}
+      className={classNames("sort", isLoading === "loading" && "disabled")}
+    >
       <div
         className={classNames(
           "sort__label",

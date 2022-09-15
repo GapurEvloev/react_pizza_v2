@@ -7,7 +7,10 @@ import styles from "./style.module.scss";
 const Pagination = ({ currentPage, setCurrentPage, isLoading }) => {
   return (
     <ReactPaginate
-      className={classNames(styles.root, isLoading && styles.disabled)}
+      className={classNames(
+        styles.root,
+        isLoading === "loading" && styles.disabled
+      )}
       breakLabel="..."
       nextLabel=">"
       onPageChange={(e) => setCurrentPage(e.selected + 1)}

@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,6 +16,7 @@ import {
   setFilters,
 } from "../redux/slices/filtreSlice";
 import { sortItems } from "../components/SortPopup/SortPopup";
+import { fetchPizzas } from "../redux/slices/pizzaSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -26,9 +26,7 @@ const Home = () => {
   const { activeCategoryId, activeSort, currentPage } = useSelector(
     (state) => state.filter
   );
-
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const { items, status } = useSelector((state) => state.pizza);
 
   const { searchValue } = React.useContext(SearchContext);
 
@@ -40,26 +38,22 @@ const Home = () => {
     dispatch(setCurrentPage(id));
   };
 
-  const fetchPizzas = () => {
-    setIsLoading(true);
-
+  const getPizzas = async () => {
     const category =
         activeCategoryId > 0 ? `&category=${activeCategoryId}` : "",
       sort = `&sortBy=${activeSort.type}`,
       order = `&order=${activeSort.order ? "asc" : "desc"}`,
       search = searchValue ? `&search=${searchValue}` : "";
 
-    axios
-      .get(
-        `https://6293ec25089f87a57ac77f49.mockapi.io/items/?page=${currentPage}&limit=4&${category}${sort}${order}${search}`
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
+    dispatch(
+      fetchPizzas({
+        currentPage,
+        category,
+        sort,
+        order,
+        search,
       })
-      .catch((error) => {
-        console.log(error);
-      });
+    );
   };
 
   React.useEffect(() => {
@@ -105,7 +99,7 @@ const Home = () => {
     window.scrollTo(0, 0);
 
     if (!isSearch.current) {
-      fetchPizzas();
+      getPizzas();
     }
 
     isSearch.current = false;
@@ -122,21 +116,34 @@ const Home = () => {
 
   return (
     <>
-      <div className="content__top">
-        <Categories
-          isLoading={isLoading}
-          activeCategory={activeCategoryId}
-          setActiveCategory={handleActiveCategoryId}
-        />
-        <SortPopup isLoading={isLoading} />
-      </div>
-      <h2 className="content__title">All pizzas</h2>
-      <div className="content__items">{isLoading ? skeleton : pizzas}</div>
-      <Pagination
-        isLoading={isLoading}
-        currentPage={currentPage}
-        setCurrentPage={handleCurrentPage}
-      />
+      {status === "error" ? (
+        <div className="content__error-info">
+          <h2>Unexpected error 😕</h2>
+          <a href="/" className="button button--black">
+            <span>Back</span>
+          </a>
+        </div>
+      ) : (
+        <>
+          <div className="content__top">
+            <Categories
+              isLoading={status}
+              activeCategory={activeCategoryId}
+              setActiveCategory={handleActiveCategoryId}
+            />
+            <SortPopup isLoading={status} />
+          </div>
+          <h2 className="content__title">All pizzas</h2>
+          <div className="content__items">
+            {status === "loading" ? skeleton : pizzas}
+          </div>
+          <Pagination
+            isLoading={status}
+            currentPage={currentPage}
+            setCurrentPage={handleCurrentPage}
+          />
+        </>
+      )}
     </>
   );
 };

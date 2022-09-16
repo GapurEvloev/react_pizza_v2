@@ -34,9 +34,10 @@ const SortPopup = ({ isLoading }: { isLoading: string }) => {
     setVisiblePopup(!visiblePopup);
   };
 
-  const handleOutsideClick = (event: any) => {
-    const path = event.path || (event.composedPath && event.composedPath());
-    if (!path.includes(sortRef.current)) {
+  const handleOutsideClick = (event: MouseEvent) => {
+    const _event = event as PopupClick;
+    const path = _event.path || (_event.composedPath && _event.composedPath());
+    if (sortRef.current && !path.includes(sortRef.current)) {
       setVisiblePopup(false);
     }
   };

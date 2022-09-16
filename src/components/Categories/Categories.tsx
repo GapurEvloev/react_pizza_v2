@@ -3,17 +3,16 @@ import classNames from "classnames";
 
 type CategoriesProps = {
   activeCategory: number;
-  setActiveCategory: any;
+  setActiveCategory: (i: number) => void;
   isLoading: string;
 };
+const categoryNames = ["All", "Meat", "Vegan", "Chicken", "Spicy", "Cheese"];
 
 const Categories: React.FC<CategoriesProps> = ({
   activeCategory,
   setActiveCategory,
   isLoading,
 }) => {
-  const categoryNames = ["All", "Meat", "Vegan", "Chicken", "Spicy", "Cheese"];
-
   return (
     <div
       className={classNames(

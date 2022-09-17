@@ -2,24 +2,19 @@ import React from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectActiveSort,
   setActiveSort,
-} from "../../redux/slices/filtreSlice";
-
-type SortItem = {
-  name: string;
-  type: string;
-  order: boolean;
-};
+} from "../../redux/filter/slice";
+import {selectActiveSort} from "../../redux/filter/selectors";
+import { Sort as SortType, SortTypeEnum } from "../../redux/filter/types";
 
 type PopupClick = MouseEvent & {
   path: Node[];
 };
 
-export const sortItems: SortItem[] = [
-  { name: "rating", type: "rating", order: true },
-  { name: "price", type: "price", order: true },
-  { name: "alphabet", type: "title", order: true },
+export const sortItems: SortType[] = [
+  { name: "rating", type: SortTypeEnum.RATING, order: true },
+  { name: "price", type: SortTypeEnum.PRICE, order: true },
+  { name: "alphabet", type: SortTypeEnum.TITLE, order: true },
 ];
 
 const SortPopup = ({ isLoading }: { isLoading: string }) => {
@@ -42,7 +37,7 @@ const SortPopup = ({ isLoading }: { isLoading: string }) => {
     }
   };
 
-  const onSelectItem = (obj: SortItem) => {
+  const onSelectItem = (obj: SortType) => {
     dispatch(setActiveSort({ ...activeSort, name: obj.name, type: obj.type }));
     setVisiblePopup(false);
   };

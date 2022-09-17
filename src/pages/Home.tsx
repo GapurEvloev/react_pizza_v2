@@ -1,7 +1,7 @@
 import React from "react";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Categories from "../components/Categories";
 import SortPopup from "../components/SortPopup";
@@ -10,16 +10,19 @@ import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 
 import {
-  selectFilter,
   setActiveCategoryId,
   setCurrentPage,
   setFilters,
-} from "../redux/slices/filtreSlice";
+} from "../redux/filter/slice";
 import { sortItems } from "../components/SortPopup/SortPopup";
-import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
+import { fetchPizzas } from "../redux/pizza/asyncActions";
+import {selectFilter} from "../redux/filter/selectors";
+import {selectPizzaData} from "../redux/pizza/selectors";
+import {useAppDispatch} from "../redux/store";
+import {SearchPizzaParams} from "../redux/pizza/types";
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
@@ -37,15 +40,15 @@ const Home: React.FC = () => {
 
   const getPizzas = async () => {
     const category =
-        activeCategoryId > 0 ? `&category=${activeCategoryId}` : "",
-      sort = `&sortBy=${activeSort.type}`,
-      order = `&order=${activeSort.order ? "asc" : "desc"}`,
-      search = searchValue ? `&search=${searchValue}` : "";
+        activeCategoryId > 0 ? `${activeCategoryId}` : "",
+      sort = `${activeSort.type}`,
+      order = `${activeSort.order ? "asc" : "desc"}`,
+      search = searchValue ? `${searchValue}` : "";
 
     dispatch(
       //@ts-ignore
       fetchPizzas({
-        currentPage,
+        currentPage: String(currentPage),
         category,
         sort,
         order,
@@ -79,13 +82,16 @@ const Home: React.FC = () => {
 
   React.useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      const activeSort = sortItems.find((obj) => obj.type === params.type);
+      const params = qs.parse(window.location.search.substring(1)) as unknown as SearchPizzaParams;
+      const activeSort = sortItems.find((obj) => obj.type === params.sort);
 
       dispatch(
         setFilters({
+          activeCategoryId: Number(params.category),
           ...params,
-          activeSort,
+          searchValue: params.search,
+          currentPage: Number(params.currentPage),
+          activeSort: activeSort || sortItems[0],
         })
       );
 

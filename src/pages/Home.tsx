@@ -10,13 +10,13 @@ import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 
 import {
-  selectFilter,
   setActiveCategoryId,
   setCurrentPage,
   setFilters,
-} from "../redux/slices/filtreSlice";
+} from "../redux/filter/slice";
 import { sortItems } from "../components/SortPopup/SortPopup";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
+import {selectFilter} from "../redux/filter/selectors";
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
       const activeSort = sortItems.find((obj) => obj.type === params.type);
-
+      console.log(activeSort)
       dispatch(
         setFilters({
           ...params,

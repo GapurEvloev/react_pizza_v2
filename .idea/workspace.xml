@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#24 continue - changed the file extension to typescript">
-      <change afterPath="$PROJECT_DIR$/src/redux/cart/selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/cart/slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/cart/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/calcTotalPrice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/getCartFromLS.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/math.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/filter/selectors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/filter/slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/filter/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartItem/CartItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem/CartItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtreSlice.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663445506367</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="#24 continue - changed the file extension to typescript">
+      <created>1663447930510</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1663447930510</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

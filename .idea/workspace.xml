@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#22 fin - props, functions and useRef typing">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#24 continue - changed the file extension to typescript">
+      <change afterPath="$PROJECT_DIR$/src/redux/cart/selectors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/cart/slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/cart/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/calcTotalPrice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/getCartFromLS.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/math.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtreSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filtreSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartItem/CartItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem/CartItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,28 +37,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/src/components&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/node_modules/typescript/lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/src",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/node_modules/prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "/Applications/MAMP/htdocs/learn_projects/LearnJS/archakov/react_pizza/react_pizza_v2/node_modules/typescript/lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
@@ -221,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663284594903</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="#24 continue - changed the file extension to typescript">
+      <created>1663445506367</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663445506367</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +278,8 @@
     <MESSAGE value="#19 fin - useParams, useLocation, Outlet" />
     <MESSAGE value="#21 fin - install TypeScript, fix Categories" />
     <MESSAGE value="#22 fin - props, functions and useRef typing" />
-    <option name="LAST_COMMIT_MESSAGE" value="#22 fin - props, functions and useRef typing" />
+    <MESSAGE value="#24 continue - changed the file extension to typescript" />
+    <option name="LAST_COMMIT_MESSAGE" value="#24 continue - changed the file extension to typescript" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

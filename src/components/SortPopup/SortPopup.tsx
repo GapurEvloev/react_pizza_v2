@@ -7,6 +7,12 @@ import {
 import {selectActiveSort} from "../../redux/filter/selectors";
 import { Sort as SortType, SortTypeEnum } from "../../redux/filter/types";
 
+// type SortItem = {
+//   name: string;
+//   type: SortTypeEnum;
+//   order: boolean;
+// };
+
 type PopupClick = MouseEvent & {
   path: Node[];
 };

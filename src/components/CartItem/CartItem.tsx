@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, removeItem } from "../../redux/cart/slice";
 import {CartItem as CartItemType} from "../../redux/cart/types";
+import classNames from "classnames";
 
 type CartItemProps = {
   id: string;
@@ -50,9 +51,10 @@ const CartItem: React.FC<CartItemProps> = ({
         </p>
       </div>
       <div className="cart__item-count">
-        <div
+        <button
+          disabled={count <= 1}
           onClick={onClickMinus}
-          className="button button--outline button--circle cart__item-count-minus"
+          className={classNames("button button--outline button--circle cart__item-count-minus", count <= 1 && "button--disable")}
         >
           <svg
             width="10"
@@ -70,7 +72,7 @@ const CartItem: React.FC<CartItemProps> = ({
               fill="#EB5A1E"
             />
           </svg>
-        </div>
+        </button>
         <b>{count}</b>
         <div
           onClick={onClickPlus}

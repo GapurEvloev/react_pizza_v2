@@ -46,6 +46,10 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
 
+    &--loading {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   &__error-info {

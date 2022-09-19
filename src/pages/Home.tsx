@@ -20,6 +20,7 @@ import {selectFilter} from "../redux/filter/selectors";
 import {selectPizzaData} from "../redux/pizza/selectors";
 import {useAppDispatch} from "../redux/store";
 import {SearchPizzaParams} from "../redux/pizza/types";
+import classNames from "classnames";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -30,9 +31,9 @@ const Home: React.FC = () => {
     useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
 
-  const handleActiveCategoryId = (id: number) => {
-    dispatch(setActiveCategoryId(id));
-  };
+  const handleActiveCategoryId = React.useCallback((id: number) => {
+      dispatch(setActiveCategoryId(id));
+  }, []);
 
   const handleCurrentPage = (id: number) => {
     dispatch(setCurrentPage(id));
@@ -129,13 +130,12 @@ const Home: React.FC = () => {
         </div>
       ) : (
         <>
-          <div className="content__top">
+          <div className={classNames("content__top", status === "loading" && "content__top--loading")}>
             <Categories
-              isLoading={status}
               activeCategory={activeCategoryId}
               setActiveCategory={handleActiveCategoryId}
             />
-            <SortPopup isLoading={status} />
+            <SortPopup />
           </div>
           <h2 className="content__title">All pizzas</h2>
           <div className="content__items">

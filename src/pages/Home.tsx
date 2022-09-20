@@ -16,10 +16,10 @@ import {
 } from "../redux/filter/slice";
 import { sortItems } from "../components/SortPopup/SortPopup";
 import { fetchPizzas } from "../redux/pizza/asyncActions";
-import {selectFilter} from "../redux/filter/selectors";
-import {selectPizzaData} from "../redux/pizza/selectors";
-import {useAppDispatch} from "../redux/store";
-import {SearchPizzaParams} from "../redux/pizza/types";
+import { selectFilter } from "../redux/filter/selectors";
+import { selectPizzaData } from "../redux/pizza/selectors";
+import { useAppDispatch } from "../redux/store";
+import { SearchPizzaParams } from "../redux/pizza/types";
 import classNames from "classnames";
 
 const Home: React.FC = () => {
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
   const { items, status } = useSelector(selectPizzaData);
 
   const handleActiveCategoryId = React.useCallback((id: number) => {
-      dispatch(setActiveCategoryId(id));
+    dispatch(setActiveCategoryId(id));
   }, []);
 
   const handleCurrentPage = (id: number) => {
@@ -40,8 +40,7 @@ const Home: React.FC = () => {
   };
 
   const getPizzas = async () => {
-    const category =
-        activeCategoryId > 0 ? `${activeCategoryId}` : "",
+    const category = activeCategoryId > 0 ? `${activeCategoryId}` : "",
       sort = `${activeSort.type}`,
       order = `${activeSort.order ? "asc" : "desc"}`,
       search = searchValue ? `${searchValue}` : "";
@@ -83,7 +82,9 @@ const Home: React.FC = () => {
 
   React.useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1)) as unknown as SearchPizzaParams;
+      const params = qs.parse(
+        window.location.search.substring(1)
+      ) as unknown as SearchPizzaParams;
       const activeSort = sortItems.find((obj) => obj.type === params.sort);
 
       dispatch(
@@ -130,7 +131,12 @@ const Home: React.FC = () => {
         </div>
       ) : (
         <>
-          <div className={classNames("content__top", status === "loading" && "content__top--loading")}>
+          <div
+            className={classNames(
+              "content__top",
+              status === "loading" && "content__top--loading"
+            )}
+          >
             <Categories
               activeCategory={activeCategoryId}
               setActiveCategory={handleActiveCategoryId}

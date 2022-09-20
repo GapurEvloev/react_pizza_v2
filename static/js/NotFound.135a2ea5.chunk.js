@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_pizza_v2=self.webpackChunkreact_pizza_v2||[]).push([[187],{7592:function(n,e,r){r.r(e),r.d(e,{default:function(){return c}});r(2791);var s="styles_root__CjoLb",t=r(184),u=function(){return(0,t.jsxs)("h1",{className:s,children:[(0,t.jsx)("span",{children:"\ud83d\ude15"}),(0,t.jsx)("br",{}),"Not found"]})},c=function(){return(0,t.jsx)(u,{})}}}]);
+//# sourceMappingURL=NotFound.135a2ea5.chunk.js.map

@@ -13,7 +13,7 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement as HTMLElement);
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={`/${"react_pizza_v2"}/`}>
       <App />
     </BrowserRouter>
   </Provider>

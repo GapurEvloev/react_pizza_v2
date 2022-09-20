@@ -1,6 +1,7 @@
 {
   "name": "react-pizza-v2",
   "version": "0.1.0",
+  "homepage": "https://gapurevloev.github.io/react_pizza_v2/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -32,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && npm run build-storybook && npm run build-gh-pages",
+    "build-gh-pages": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "2.7.1",
     "sass": "^1.54.9"
   }

@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#26 fin - localstorage">
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#27 fin - lazyLoading &amp; optimization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup/SortPopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/cart/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/cart/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/getCartFromLS.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/getCartFromLS.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +73,7 @@
       <workItem from="1662768892421" duration="28700000" />
       <workItem from="1663084233546" duration="626000" />
       <workItem from="1663084918844" duration="69214000" />
-      <workItem from="1663527025365" duration="21026000" />
+      <workItem from="1663527025365" duration="27910000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -263,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663623943406</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="#27 fin - lazyLoading &amp; optimization">
+      <created>1663640201962</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1663640201962</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +282,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="#2 fin - make components" />
     <MESSAGE value="#3 fin - useState counter" />
     <MESSAGE value="#4 fin - render pizzas" />
     <MESSAGE value="#5 fin - sort popup" />
@@ -306,7 +306,8 @@
     <MESSAGE value="#24 fin" />
     <MESSAGE value="#25 fin - useCallback &amp; React.memo" />
     <MESSAGE value="#26 fin - localstorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="#26 fin - localstorage" />
+    <MESSAGE value="#27 fin - lazyLoading &amp; optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="#27 fin - lazyLoading &amp; optimization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

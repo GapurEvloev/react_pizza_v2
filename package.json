@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && npm run build-storybook && npm run build-gh-pages",
+    "deploy": "npm run build && npm run build-gh-pages",
     "build-gh-pages": "gh-pages -d build"
   },
   "eslintConfig": {

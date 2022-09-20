@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="#27 fin - lazyLoading &amp; optimization">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="5f39b071-cd26-419e-8d7e-a744e42eb13b" name="Changes" comment="gh-pages">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
       <workItem from="1662768892421" duration="28700000" />
       <workItem from="1663084233546" duration="626000" />
       <workItem from="1663084918844" duration="69214000" />
-      <workItem from="1663527025365" duration="27910000" />
+      <workItem from="1663527025365" duration="28015000" />
     </task>
     <task id="LOCAL-00001" summary="#2 fin - make components">
       <created>1662773978420</created>
@@ -264,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663640201962</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="gh-pages">
+      <created>1663711152182</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1663711152182</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +286,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="#3 fin - useState counter" />
     <MESSAGE value="#4 fin - render pizzas" />
     <MESSAGE value="#5 fin - sort popup" />
     <MESSAGE value="#6 fin - get pizzas from BE" />
@@ -307,7 +310,8 @@
     <MESSAGE value="#25 fin - useCallback &amp; React.memo" />
     <MESSAGE value="#26 fin - localstorage" />
     <MESSAGE value="#27 fin - lazyLoading &amp; optimization" />
-    <option name="LAST_COMMIT_MESSAGE" value="#27 fin - lazyLoading &amp; optimization" />
+    <MESSAGE value="gh-pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="gh-pages" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
